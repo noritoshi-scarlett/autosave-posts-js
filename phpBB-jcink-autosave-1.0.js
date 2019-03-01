@@ -1,7 +1,7 @@
 /* POSTING */
 /*************************************/
 
-let forum_name = 'shadow-york';
+let forum_name = 'san-jose';
 //znajdz textarea
 if ( $('textarea.textinput').length ) {
 
@@ -12,10 +12,10 @@ if ( $('textarea.textinput').length ) {
         topic = 't-' + $('input[name=t]').val();
     } else if ( $( "input[name=f]" ).length ) {
         topic = 'f-' + $('input[name=f]').val();
-    } else if ( $( "input[name=p]" ).length ) {
-        topic = 'p-' + $('input[name=p]').val();
+    } else if ( $( "input[name=Act]" ).length ) {
+        topic = 'Msg-' + $('input[name=Act]').val();
     }
-    var storePostName = 'shadow-york-Post-' + topic;
+    var storePostName = forum_name + '-Post-' + topic;
     var form = $('form[name=REPLIER]');
 
     zapisOdczytPostu();
@@ -55,7 +55,7 @@ function zapisOdczytPostu(topic) {
 /* SZYBKA ODPOWIEDZ */
 /*************************************/
 
-let forum_name = 'shadow-york';
+let forum_name = 'san-jose';
 //znajdz textarea
 if($('textarea.textinput').length) {
 
