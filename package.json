@@ -1,0 +1,24 @@
+{
+  "name": "autosave-posts-js",
+  "version": "1.0.0",
+  "description": "jQuery Script with autosave messages for phpBB forums",
+  "main": "",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/noritoshi-scarlett/autosave-posts-js.git"
+  },
+  "keywords": [
+    "jQuery",
+    "JS",
+    "Postarium"
+  ],
+  "author": "Noritoshi",
+  "license": "UNLICENSED",
+  "bugs": {
+    "url": "https://github.com/noritoshi-scarlett/autosave-posts-js/issues"
+  },
+  "homepage": "https://github.com/noritoshi-scarlett/autosave-posts-js#readme"
+}
