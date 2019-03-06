@@ -1,48 +1,31 @@
 /* POSTING */
 /*************************************/
-
 let forum_name = 'san-jose';
+var editor = $('textarea.textinput[name="Post"]');
+var topic = '';
 //znajdz textarea
-if ( $('textarea.textinput').length ) {
-
-    editor = $('textarea.textinput');
-    var topic = '';
-
-    if ( $( "input[name=t]" ).length ) {
+if ( editor.length ) {
+           if ( $( "input[name=t]" ).length ) {
         topic = 't-' + $('input[name=t]').val();
     } else if ( $( "input[name=f]" ).length ) {
         topic = 'f-' + $('input[name=f]').val();
-    } else if ( $( "input[name=Act]" ).length ) {
-        topic = 'Msg-' + $('input[name=Act]').val();
+    } else if ( $( "input[name=act]" ).length ) {
+        topic = 'PW';
     }
-    var storePostName = forum_name + '-Post-' + topic;
     var form = $('form[name=REPLIER]');
-
-    zapisOdczytPostu();
-}
-
-function zapiszPost(formularz) {
-
-    var postToStore = $('textarea.textinput').val();
-        if ((postToStore !== "undefined") && (postToStore !== null) && (postToStore !== "")) {
-            localStorage.setItem(storePostName, postToStore);
-        }
-    return true;
-}
-
-function zapisOdczytPostu(topic) {
-
+    var storePostName = forum_name + '-Post-' + topic;
     var localPost = localStorage.getItem(storePostName);
 
     //odczytanie ostatniej tresci ze storage
     if (localPost) {
         var postToStore = editor.val();
         if ( (postToStore === "undefined") || (postToStore === null) || (postToStore === "") ) {
-            editor.val(localPost);
-            editor.before( $('<div style="color: #61A269">').text('Zaladowano post z pamieci przegladarki.'));
+           editor.before($('<div style="color: #61A269">')
+              .text('W pamięci przeglądarki zachowano ostatni post. ')
+              .append($('<input type="button" id="btn-autosave-load" class="forminput" name="btn-autosave-load" value="załaduj post.">'))
+           );
         }
     }
-
     //zapisywanie tresci do storage
     window.setInterval(function() {
         var postToStore = editor.val();
@@ -50,4 +33,10 @@ function zapisOdczytPostu(topic) {
             localStorage.setItem(storePostName, postToStore);
         }
     }, 5000);
+    //odczyanie z pamieci
+    document.addEventListener('click',function(e) {
+      if (e.target && e.target.id == 'btn-autosave-load') {
+        editor.val(localPost);
+      }
+    });
 }
