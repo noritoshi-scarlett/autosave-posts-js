@@ -1,10 +1,10 @@
-/* POSTING */
+/* AUTOZAPISYWANIE POSTU DLA FORUMOTION 1.0 */
 /*************************************/
 $(document).ready(function() {
   $(document).one('mouseover', '.sceditor-container > textarea', function(){
       initilize($(this));
   });
-                  
+
   function initilize(editor) {
       let forum_name = 'nazwa-forum';
       var topic = '';

@@ -1,4 +1,4 @@
-/* POSTING */
+/* AUTOZAPISYWANIE POSTU DLA JCINK 1.0 */
 /*************************************/
 let forum_name = 'nazwa-forum';
 var editor = $('textarea.textinput[name="Post"]');
