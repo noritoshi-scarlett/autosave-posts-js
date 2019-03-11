@@ -1,6 +1,6 @@
 /* POSTING */
 /*************************************/
-let forum_name = 'san-jose';
+let forum_name = 'nazwa-forum';
 var editor = $('textarea.textinput[name="Post"]');
 var topic = '';
 //znajdz textarea
@@ -22,7 +22,7 @@ if ( editor.length ) {
         if ( (postToStore === "undefined") || (postToStore === null) || (postToStore === "") ) {
            editor.before($('<div style="color: #61A269">')
               .text('W pamięci przeglądarki zachowano ostatni post. ')
-              .append($('<input type="button" id="btn-autosave-load" class="forminput" name="btn-autosave-load" value="załaduj post.">'))
+              .append($('<input type="button" id="btn-autosave-load" class="forminput" name="btn-autosave-load" value="Załaduj post">'))
            );
         }
     }
